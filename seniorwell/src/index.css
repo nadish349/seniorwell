@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply the Outfit font globally */
+* {
+    font-family: 'Outfit', sans-serif; /* Added fallback font for better compatibility */
+}
+
+/* Style for active elements */
+.active hr {
+    @apply block; /* Ensures the block display is applied correctly */
+
+
+}
+
+/* Hide the scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+    display: none; /* Use `display: none;` for hiding scrollbar */
+}
+@media (max-width: 740px) {
+    .active p{
+        @apply text-white bg-primary
+    }
+}
