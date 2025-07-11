@@ -1,5 +1,5 @@
 import validator from 'validator';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import clubModel from '../models/clubModel.js';
 import jwt from 'jsonwebtoken';
 
