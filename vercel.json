@@ -1,3 +1,6 @@
 {
-  "rootDirectory": "seniorwell"
+  "buildCommand": "cd seniorwell && npm run build",
+  "outputDirectory": "seniorwell/dist",
+  "installCommand": "cd seniorwell && npm install",
+  "framework": "vite"
 } 
