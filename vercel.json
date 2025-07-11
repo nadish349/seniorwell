@@ -1,5 +1,4 @@
 {
   "rootDirectory": "seniorwell",
-  "outputDirectory": "dist",
   "framework": "vite"
 } 
