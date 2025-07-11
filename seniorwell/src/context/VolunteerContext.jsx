@@ -1,12 +1,13 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import config from '../config/config.js';
 
 export const VolunteerContext = createContext();
 
 const VolunteerContextProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('volunteerToken') || '');
   const [profile, setProfile] = useState(null);
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'; // ✅ Use environment variable
+  const backendUrl = config.backendUrl;
 
   // Fetch profile when token changes
   useEffect(() => {

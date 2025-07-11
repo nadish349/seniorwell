@@ -1,12 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
+import config from '../config/config.js';
 
 export const Appcontext = createContext();
 
 const AppcontextProvider = (props) => {
     const currencySymbol = '₹';
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = config.backendUrl;
     const [doctors, setDoctors] = useState([]);
     const [token, setToken] = useState('');
     const [medicines, setMedicines]= useState([]);

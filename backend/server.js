@@ -17,11 +17,24 @@ import orderRouter from "./routes/medicineOrderRoutes.js";
 
 // App config
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
+
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:5173', // Vite dev server
+    'http://localhost:3000', // React dev server
+    'https://your-frontend-domain.vercel.app', // Replace with your actual frontend domain
+    'https://seniorwell.vercel.app', // Your Vercel domain
+    'https://seniorwell1.vercel.app', // Alternative Vercel domain
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Connect to Cloudinary
 connectCloudinary()
