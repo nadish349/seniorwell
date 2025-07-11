@@ -7,7 +7,7 @@ export const VolunteerContext = createContext();
 const VolunteerContextProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('volunteerToken') || '');
   const [profile, setProfile] = useState(null);
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'https://senior-well-production.up.railway.app';
 
   // Fetch profile when token changes
   useEffect(() => {
