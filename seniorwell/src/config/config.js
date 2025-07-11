@@ -1,6 +1,6 @@
 // Configuration file for environment variables
 const config = {
-  backendUrl: import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000',
+  backendUrl: import.meta.env.VITE_BACKEND_URL || 'https://senior-well-production.up.railway.app',
   isDevelopment: import.meta.env.DEV,
   isProduction: import.meta.env.PROD,
 };
