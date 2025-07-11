@@ -1,6 +1,11 @@
 {
-  "buildCommand": "cd seniorwell && npm run build",
+  "buildCommand": "cd seniorwell && npm install && npm run build",
   "outputDirectory": "seniorwell/dist",
   "installCommand": "cd seniorwell && npm install",
-  "framework": "vite"
+  "framework": "vite",
+  "functions": {
+    "seniorwell/dist/**/*.html": {
+      "runtime": "nodejs18.x"
+    }
+  }
 } 
