@@ -6,7 +6,6 @@ import { v2 as cloudinary } from 'cloudinary';
 import doctorModel from '../models/doctorModel.js';
 import appointmentModel from '../models/AppointmentModel.js'; 
 import  razorpay from 'razorpay'
-import sendEmail from '../../admin/src/components/email.js';
 // ✅ Register User API
 // ✅ Register User API
 const registerUser = async (req, res) => {
@@ -38,13 +37,6 @@ const registerUser = async (req, res) => {
     const user = await newUser.save();
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
-
-    // ✅ Send welcome email
-    await sendEmail(
-      email,
-      "Welcome to MedConnect! 👋",
-      `Hi ${name},\n\nWelcome to our platform. You can now book appointments and manage your health conveniently.\n\nThank you,\nMedConnect Team`
-    );
 
     res.json({ success: true, token });
   } catch (error) {
@@ -187,7 +179,7 @@ const bookAppointment = async (req, res) => {
     const newAppointment = new appointmentModel(appointmentData);
     await newAppointment.save();
 
-    // Save updated slots in the doctor’s profile
+    // Save updated slots in the doctor's profile
     await doctorModel.findByIdAndUpdate(docId, { slots_booked });
 
     res.json({ success: true, message: 'Appointment booked successfully' });

@@ -10,6 +10,7 @@ import volunteerRouter from "./routes/volunteerRoute.js";
 import clubRouter from "./routes/clubRoute.js";
 import medicineRouter from "./routes/medicineRoute.js";
 import RequestRouter from "./routes/requestRoute.js";
+import notificationRouter from "./routes/notificationRoute.js";
 
 import orderRouter from "./routes/medicineOrderRoutes.js";
 
@@ -50,7 +51,7 @@ app.use("/api/medicines", medicineRouter);
 
 app.use("/api/buymed",orderRouter);
 app.use('/api/request',RequestRouter)
-
+app.use('/api/notifications', notificationRouter)
 
 
 
