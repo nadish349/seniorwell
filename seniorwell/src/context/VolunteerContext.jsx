@@ -6,7 +6,7 @@ export const VolunteerContext = createContext();
 const VolunteerContextProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('volunteerToken') || '');
   const [profile, setProfile] = useState(null);
-  const backendUrl = 'http://localhost:4000'; // ✅ Change this if your backend URL is different
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'; // ✅ Use environment variable
 
   // Fetch profile when token changes
   useEffect(() => {
