@@ -1,5 +1,4 @@
 {
-  "rootDirectory": "seniorwell",
   "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
